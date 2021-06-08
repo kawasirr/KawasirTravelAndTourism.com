@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Alkwasir Travel & Tourism Agency</title>
+	<!-- bootstrap cdn -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+	<!-- font awesome cdn -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<!-- style.css -->
+	<!-- jquery cdn -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="icon" href="images/icon 2.1.png" type="image/jpg">
+</head>
+<style>
+    /*google font*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,900&display=swap');
+
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font: sans-serif;
+    font-weight: 500px;
+    margin-top: 25px;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 10%;
+  background-color: #24252a;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700 ;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+  margin-top: 25px;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.cta {
+  margin-left: 20px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+  text-decoration: none;
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+  margin-top: 15px;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: all 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+  cursor: pointer;
+}
+
+@media screen and (max-height: 850px) {
+
+
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
+}
+
+
+
+
+/*slider*/
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
+
+#mainNavbar {
+    padding-left: 50px;
+    padding-top: 20px
+}
+
+.navbar-dark .navbar-brand {
+    font-family: 'Source Serif Pro', serif
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Source Serif Pro', serif
+}
+
+.display-4 {
+    font-family: 'Source Serif Pro', serif
+}
+
+.lead {
+    font-family: 'Source Serif Pro', serif
+}
+
+.navbar.scrolled {
+    background: rgb(34, 31, 31);
+    transition: background 500ms
+}
+
+.font-weight-light {
+    font-family: 'Source Serif Pro', serif
+}
+/*card*/
+    .card {
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px #AA00FF;
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.display-4 {
+    font-family: 'Source Serif Pro', serif
+}
+
+.lead {
+    font-family: 'Source Serif Pro', serif
+}
+
+.set-p {
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+.image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px
+}
+
+.rating {
+    background-color: #3D5AFE;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px
+}
+
+.grade {
+    font-size: 18px
+}
+
+.line {
+    height: 1px;
+    background-color: #E0E0E0
+}
+
+@media screen and (max-width: 575px) {
+    .image {
+        height: auto;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px
+    }
+}
+
+/*footer*/
+.card {
+     color: #383431 !important;
+     background-color: #FFFFFF !important
+ }
+
+ h5 {
+     font-size: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important
+ }
+
+ .fa {
+     cursor: pointer;
+     font-size: 21px;
+     margin: 5px 10px 5px 10px !important
+ }
+
+ button {
+     font-size: calc(13px + (16 - 13) * ((100vw - 360px) / (1600 - 320))) !important;
+     border-radius: 0 !important;
+     padding-left: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+     padding-right: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+     padding-top: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important;
+     padding-bottom: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important;
+     background-color: #383431 !important;
+     border: none !important
+ }
+
+ button:focus {
+     -moz-box-shadow: none !important;
+     -webkit-box-shadow: none !important;
+     box-shadow: none !important;
+     outline-width: 0
+ }
+
+ li {
+     margin-top: 8px;
+     margin-bottom: 8px
+ }
+
+ input::-webkit-input-placeholder {
+     padding-left: 5px !important;
+     transform: translate3d(0, -2px, 0)
+ }
+
+ input::placeholder {
+     vertical-align: middle !important;
+     color: rgb(196, 193, 193) !important;
+     font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important
+ }
+
+ input {
+     border-radius: 2px !important;
+     background: transparent !important;
+     color: #FFFFFF !important
+ }
+
+ input:focus {
+     -moz-box-shadow: none !important;
+     -webkit-box-shadow: none !important;
+     box-shadow: none !important;
+     outline-width: 0;
+     border-color: #FFFFFF !important
+ }
+
+ 
+ li:first-child {
+     font-size: 18px !important;
+     font-weight: bold
+ }
+
+ footer {
+     background-color: #383431 !important;
+     color: #FFFFFF !important
+ }
+
+ small {
+     font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important
+ }
+
+ p {
+     font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
+     color: rgb(196, 193, 193) !important
+ }
+
+ .social {
+     position: relative;
+     left: -10px
+ }
+
+ .Subscribe {
+     background-color: #FFFFFF !important;
+     color: #383431 !important;
+     font-weight: bold
+ }
+
+ li:not(:first-child) {
+     color: rgb(196, 193, 193) !important
+ }
+ 
+
+</style>
+<body>
+<div>
+
+
+    <header>
+        <a class="logo" href="home.html"><img src="images/logo.png" alt="logo" style="width: 290px"></a>
+        <nav>
+            <ul class="nav__links">
+                
+                <li><a href="https://goo.gl/maps/1i4WAtgURvBJ3S7k6" target="_blank">Location</a></li>
+                <li><a href="#">Whatsapp</a></li>
+                <li><a href="more info about places.html" target="_blank">info on places</a></li>
+                <li><a href="About.html" target="_blank">About</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="contact.html" target="_blank">Contact</a>
+        <p class="menu cta">Menu</p>
+    </header>
+    <div class="overlay">
+        <a class="close">&times;</a>
+        <div class="overlay__content">
+            <a href="https://goo.gl/maps/1i4WAtgURvBJ3S7k6">Location</a>
+            <a href="#">Projects</a>
+            <a href="#">About</a>
+            <a href="">info on places</a>
+        </div>
+    </div>
+
+    <script>
+        const doc = document;
+const menuOpen = doc.querySelector(".menu");
+const menuClose = doc.querySelector(".close");
+const overlay = doc.querySelector(".overlay");
+
+menuOpen.addEventListener("click", () => {
+  overlay.classList.add("overlay--active");
+});
+
+menuClose.addEventListener("click", () => {
+  overlay.classList.remove("overlay--active");
+});
+
+    </script>
+
+			<!-- slider banner	 -->
+      <div id="indicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#indicators" data-slide-to="0" class="active"></li>
+            <li data-target="#indicators" data-slide-to="1"></li>
+            <li data-target="#indicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('https://live.staticflickr.com/3392/3180267963_e8a34b70e6_b.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="display-4">Sudan on night</h3>
+                    <p class="lead">Some description about the first slide</p>
+                </div>
+            </div> <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://i.pinimg.com/originals/3b/e6/e4/3be6e4fadcdb6b6b0be1fc96ca65c56d.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="display-4">Sudan on cloud</h3>
+                    <p class="lead">Some description about the second slide</p>
+                </div>
+            </div> <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://www.steppestravel.com/app/uploads/2019/06/a-sunset-view-of-nile-river-in-khartoum-sudan.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="display-4">Sudan on summer</h3>
+                    <p class="lead">Some description about the third slide</p>
+                </div>
+            </div>
+        </div> <a class="carousel-control-prev" href="#indicators" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#indicators" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+      </div>
+
+
+	<div>
+        <h1>you can setup your payment in our <a href="https://goo.gl/maps/1i4WAtgURvBJ3S7k6" target="_blank">Location</a> only </h1>
+      <div class="container-fluid  px-4 py-5 mx-auto wrap">
+        <div class="row justify-content-center">
+            <div class="card border-0">
+                <div class="row set-p justify-content-center">
+                    <div class="col-sm-4 px-0"> <img class="image" src="https://m.psecn.photoshelter.com/img-get/I0000lJ7UvthASgc/s/1200/I0000lJ7UvthASgc.jpg"> </div>
+                    <div class="col-sm-8">
+                        <div class="row px-3 mt-4 mb-3">
+                            <p class="rating mb-0 px-2 mr-3"><strong>8.0</strong></p>
+                            <p class="text-primary mb-0 mr-2 grade"><strong>Very Good</strong></p>
+                            <p class="text-secondary mb-0 mr-2">&middot;</p>
+                            <p class="text-secondary mb-0">14K review</p>
+                        </div>
+                        <div class="row px-3">
+                            <h3 class="font-weight-bold">Park Inn by Radisson<br>Berlin Alexanderplatz</h3>
+                        </div>
+                        <!--<div class="row px-3 mb-2 mt-2"> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span></div>-->
+                        <div class="row px-3">
+                            <h5 class="mb-1">1 bedroom &middot; 1 living &middot; 2 beds</h5>
+                        </div>
+                        <div class="row px-3">
+                            <p class="">Mitte, Berlin &middot; 2.6 km from center</p>
+                        </div>
+                        <div class="line"></div>
+                        <div class="row px-3 mt-3">
+                            <h5 class="text-secondary mb-1">Sky Suite</h5>
+                        </div>
+                        <div class="row px-3">
+                            <h2 class="text-success mb-1 font-weight-bold">$28</h2>
+                        </div>
+                        <div class="row px-3 mb-3">
+                            <a href=""><i class="fa fa-phone" aria-hidden="true"></i></a> <a href=""><p class="text-muted mb-0" style="margin-top: 5px">+249125530935</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="card border-0">
+              <div class="row set-p justify-content-center">
+                  <div class="col-sm-4 px-0"> <img class="image" src="https://m.psecn.photoshelter.com/img-get/I0000lJ7UvthASgc/s/1200/I0000lJ7UvthASgc.jpg"> </div>
+                  <div class="col-sm-8">
+                      <div class="row px-3 mt-4 mb-3">
+                          <p class="rating mb-0 px-2 mr-3"><strong>8.0</strong></p>
+                          <p class="text-primary mb-0 mr-2 grade"><strong>Very Good</strong></p>
+                          <p class="text-secondary mb-0 mr-2">&middot;</p>
+                          <p class="text-secondary mb-0">reviewed by Founder </p>
+                      </div>
+                      <div class="row px-3">
+                          <h3 class="font-weight-bold">Park Inn by Radisson<br>Berlin Alexanderplatz</h3>
+                      </div>
+                      <!--<div class="row px-3 mb-2 mt-2"> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span></div>-->
+                      <div class="row px-3">
+                          <h5 class="mb-1">1 bedroom &middot; 1 living &middot; 2 beds</h5>
+                      </div>
+                      <div class="row px-3">
+                          <p class="">Mitte, Berlin &middot; 2.6 km from center</p>
+                      </div>
+                      <div class="line"></div>
+                      <div class="row px-3 mt-3">
+                          <h5 class="text-secondary mb-1">Sky Suite</h5>
+                      </div>
+                      <div class="row px-3">
+                          <h2 class="text-success mb-1 font-weight-bold">$28</h2>
+                      </div>
+                      <div class="row px-3 mb-3">
+                        <a href=""><i class="fa fa-phone" aria-hidden="true"></i></a> <a href=""><p class="text-muted mb-0" style="margin-top: 5px">+249125530935</p></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="row justify-content-center">
+        <div class="card border-0">
+            <div class="row set-p justify-content-center">
+                <div class="col-sm-4 px-0"> <img class="image" src="https://m.psecn.photoshelter.com/img-get/I0000lJ7UvthASgc/s/1200/I0000lJ7UvthASgc.jpg"> </div>
+                <div class="col-sm-8">
+                    <div class="row px-3 mt-4 mb-3">
+                        <p class="rating mb-0 px-2 mr-3"><strong>8.0</strong></p>
+                        <p class="text-primary mb-0 mr-2 grade"><strong>Very Good</strong></p>
+                        <p class="text-secondary mb-0 mr-2">&middot;</p>
+                        <p class="text-secondary mb-0">reviewed by founder</p>
+                    </div>
+                    <div class="row px-3">
+                        <h3 class="font-weight-bold">Park Inn by Radisson<br>Berlin Alexanderplatz</h3>
+                    </div>
+                   <!--<div class="row px-3 mb-2 mt-2"> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span></div>-->
+                    <div class="row px-3">
+                        <h5 class="mb-1">1 bedroom &middot; 1 living &middot; 2 beds</h5>
+                    </div>
+                    <div class="row px-3">
+                        <p class="">Mitte, Berlin &middot; 2.6 km from center</p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="row px-3 mt-3">
+                        <h5 class="text-secondary mb-1">Sky Suite</h5>
+                    </div>
+                    <div class="row px-3">
+                        <h2 class="text-success mb-1 font-weight-bold">$28</h2>
+                    </div>
+                    <div class="row px-3 mb-3">
+                        <a href=""><i class="fa fa-phone" aria-hidden="true"></i></a> <a href=""><p class="text-muted mb-0" style="margin-top: 5px">+249125530935</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      
+    
+</div>
+    </div>
+          <footer>
+              <div class="row justify-content-around mb-0 pt-5 mx-4">
+                  <div class="col-xl-2 col-md-4 order-xl-1 order-4 mr-xl-0 my-auto">
+                      <ul class="list-unstyled mt-md-3 mt-5">
+                          <li>Here Social Media</li>
+                          <li class="social"> 
+                              <span>
+                                   <a href="https://www.facebook.com/Alkwasir-Travel-Tourism-100583365581927/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            </span> 
+                             <span> 
+                                   <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                             </span> 
+                             <span>
+                                  <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a> 
+                            </span>
+                            <span>
+                                <a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i></a> 
+                          </span>
+                             
+                        </li>
+                      </ul>
+                      <ul class="list-unstyled my-xl-4 my-md-3">
+                          <li>Copyright</li>
+                          <li>&#9400; Nutrition 2019</li>
+                      </ul>
+                  </div>
+                  <div class="col-xl-2 col-md-3 pt-4 order-1">
+                      <ul class="list-unstyled">
+                          <li class="mt-md-0 mt-4">Our Solution</li>
+                          <li>Intergrated Security </li>
+                          <li>Core Features</li>
+                          <li>Product Features</li>
+                          <li>Pricing</li>
+                      </ul>
+                  </div>
+                  <div class="col-xl-2 col-md-3 pt-4 order-2">
+                      <ul class="list-unstyled">
+                          <li class="mt-md-0 mt-4">Your needs</li>
+                          <li>Intergrated Security </li>
+                          <li>Core Features</li>
+                          <li>Product Features</li>
+                          <li>Pricing</li>
+                      </ul>
+                  </div>
+                  <div class="col-xl-auto col-md-3 pt-4 my-sm-0 order-md-3 order-sm-1 ">
+                      <ul class="list-unstyled">
+                          <li class="mt-md-0 mt-4">Offer</li>
+                          <li>Intergrated Security </li>
+                          <li>Core Features</li>
+                          <li>Product Features</li>
+                          <li>Pricing</li>
+                      </ul>
+                  </div>
+                 
+              </div>
+              <div class="row justify-content-center px-3 py-3 pt-5">
+                  <div class="col text-center">
+                      <p class="mb-0">*These statement have not evaluated by the Food and Drug Addministrations.</p>
+                      <p>This product is not intented to diagonse,treat,cure, or prevent any disease.</p>
+                  </div>
+              </div>
+          </footer>
+      </div>
+
+
+
+	<!-- scripts -->
+	<!-- bootstrap javascript cdn -->
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
